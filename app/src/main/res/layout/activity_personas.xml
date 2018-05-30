@@ -7,4 +7,104 @@
     android:layout_height="match_parent"
     tools:context="com.example.topicosavanzados.topicos.PersonasActivity">
 
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/TextViewRFC"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="32dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:hint="RFC" />
+
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/TextViewNombre"
+        app:layout_constraintLeft_toLeftOf="@+id/TextViewRFC"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@+id/TextViewRFC"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:hint="Nombre" />
+
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/TextViewCiudad"
+        app:layout_constraintLeft_toLeftOf="@+id/TextViewNombre"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@+id/TextViewNombre"
+        android:hint="Ciudad" />
+
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/TextViewEdad"
+        android:layout_marginStart="32dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginEnd="32dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@+id/TextViewCiudad"
+        android:hint="Edad" />
+
+    <Button
+        android:text="Crear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        android:layout_marginTop="32dp"
+        app:layout_constraintTop_toBottomOf="@+id/TextViewEdad"
+        app:layout_constraintLeft_toLeftOf="@+id/TextViewEdad" />
+
+    <Button
+        android:text="Consultar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button2"
+        android:layout_marginStart="8dp"
+        app:layout_constraintLeft_toRightOf="@+id/button4"
+        app:layout_constraintTop_toTopOf="@+id/button" />
+
+    <Button
+        android:text="Actualizar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button3"
+        android:layout_marginStart="8dp"
+        app:layout_constraintLeft_toRightOf="@+id/button2"
+        app:layout_constraintTop_toTopOf="@+id/button2" />
+
+    <Button
+        android:text="Eliminar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button4"
+        app:layout_constraintLeft_toLeftOf="@+id/button"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <Button
+        android:text="Mostrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button5"
+        android:layout_marginStart="8dp"
+        app:layout_constraintLeft_toRightOf="@+id/button4"
+        android:layout_marginTop="16dp"
+        app:layout_constraintTop_toBottomOf="@+id/button2" />
 </android.support.constraint.ConstraintLayout>
