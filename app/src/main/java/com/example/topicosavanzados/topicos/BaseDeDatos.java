@@ -2,6 +2,7 @@ package com.example.topicosavanzados.topicos;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -42,6 +43,12 @@ public class BaseDeDatos extends SQLiteOpenHelper {
             return false;
         else
             return  true;
+    }
+
+    public Cursor obtenerPersona(String rfc) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("SELECT * FROM Personas WHERE RFC = '"+rfc+"'",null);
+        return res;
     }
 
 }
