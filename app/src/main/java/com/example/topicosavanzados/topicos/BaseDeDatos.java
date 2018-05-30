@@ -51,4 +51,8 @@ public class BaseDeDatos extends SQLiteOpenHelper {
         return res;
     }
 
+    public boolean actualizarPersona(String rfc, String nombre, String ciudad, int edad) {
+        return true;
+    }
+
 }

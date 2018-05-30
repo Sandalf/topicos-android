@@ -42,11 +42,34 @@ public class PersonasActivity extends AppCompatActivity implements View.OnClickL
     }
 
     public void crear() {
-        db.insertarPersona(EditTextRFC.getText().toString(),
-                EditTextNombre.getText().toString(),
-                EditTextCiudad.getText().toString(),
-                Integer.parseInt(EditTextEdad.getText().toString()));
-        mostrarAlerta("Exito","Persona creada");
+        if(validarCampos()) {
+            db.insertarPersona(EditTextRFC.getText().toString().trim(),
+                    EditTextNombre.getText().toString().trim(),
+                    EditTextCiudad.getText().toString().trim(),
+                    Integer.parseInt(EditTextEdad.getText().toString().trim()));
+            mostrarAlerta("Exito", "Persona creada");
+        }
+    }
+
+    public boolean validarCampos() {
+        if(EditTextRFC.getText().toString().trim().length() == 0) {
+            mostrarAlerta("Error","Debe insertar un RFC");
+            EditTextRFC.requestFocus();
+            return false;
+        } else if (EditTextNombre.getText().toString().trim().length() == 0) {
+            mostrarAlerta("Error","Debe insertar un Nombre");
+            EditTextNombre.requestFocus();
+            return false;
+        } else if (EditTextCiudad.getText().toString().trim().length() == 0) {
+            mostrarAlerta("Error","Debe insertar una Ciudad");
+            EditTextCiudad.requestFocus();
+            return false;
+        } else if (EditTextEdad.getText().toString().trim().length() == 0) {
+            mostrarAlerta("Error","Debe insertar una Edad");
+            EditTextEdad.requestFocus();
+            return false;
+        }
+        return true;
     }
 
     public void consultar() {
@@ -56,15 +79,11 @@ public class PersonasActivity extends AppCompatActivity implements View.OnClickL
             return;
         }
 
-        StringBuffer buffer = new StringBuffer();
-        while(res.moveToNext()) {
-            buffer.append("RFC: "+res.getString(0)+"\n");
-            buffer.append("Nombre: "+res.getString(1)+"\n");
-            buffer.append("Ciudad: "+res.getString(2)+"\n");
-            buffer.append("Edad: "+res.getInt(3)+"\n\n");
-        }
-
-        mostrarAlerta("Data",buffer.toString());
+        res.moveToFirst();
+        EditTextRFC.setText(res.getString(0));
+        EditTextNombre.setText(res.getString(1));
+        EditTextCiudad.setText(res.getString(2));
+        EditTextEdad.setText(res.getString(3));
     }
 
     @Override
@@ -76,6 +95,13 @@ public class PersonasActivity extends AppCompatActivity implements View.OnClickL
             case R.id.ButtonConsultar:
                 consultar();
                 break;
+        }
+    }
+
+    public void actualizar() {
+        if(validarCampos()) {
+            // actualizar persona
+
         }
     }
 }
