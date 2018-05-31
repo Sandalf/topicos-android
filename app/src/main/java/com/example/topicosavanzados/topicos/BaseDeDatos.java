@@ -65,4 +65,9 @@ public class BaseDeDatos extends SQLiteOpenHelper {
             return  true;
     }
 
+    public Integer eliminarPersona(String rfc) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete("Personas","RFC = ?", new String[]{rfc});
+    }
+
 }

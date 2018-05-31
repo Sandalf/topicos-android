@@ -11,7 +11,7 @@ import android.widget.EditText;
 public class PersonasActivity extends AppCompatActivity implements View.OnClickListener {
 
     EditText EditTextRFC,EditTextNombre,EditTextCiudad,EditTextEdad;
-    Button ButtonCrear, ButtonConsultar, ButtonActualizar;
+    Button ButtonCrear, ButtonConsultar, ButtonActualizar, ButtonEliminar;
     BaseDeDatos db;
 
     @Override
@@ -35,6 +35,9 @@ public class PersonasActivity extends AppCompatActivity implements View.OnClickL
 
         ButtonActualizar = (Button) findViewById(R.id.ButtonActualizar);
         ButtonActualizar.setOnClickListener(this);
+
+        ButtonEliminar = (Button) findViewById(R.id.ButtonEliminar);
+        ButtonEliminar.setOnClickListener(this);
     }
 
     public void mostrarAlerta(String titulo, String mensaje) {
@@ -105,6 +108,9 @@ public class PersonasActivity extends AppCompatActivity implements View.OnClickL
             case R.id.ButtonActualizar:
                 actualizar();
                 break;
+            case R.id.ButtonEliminar:
+                eliminar();
+                break;
         }
     }
 
@@ -119,6 +125,20 @@ public class PersonasActivity extends AppCompatActivity implements View.OnClickL
             } else {
                 mostrarAlerta("Error", "Error al actualizar");
             }
+        }
+    }
+
+    public void eliminar() {
+        if(EditTextRFC.getText().toString().trim().length() == 0) {
+            mostrarAlerta("Error","Debe insertar un RFC");
+            EditTextRFC.requestFocus();
+        }
+
+        Integer filasEliminadas = db.eliminarPersona(EditTextRFC.getText().toString().trim());
+        if(filasEliminadas > 0) {
+            mostrarAlerta("Exito", "Registro eliminado");
+        } else {
+            mostrarAlerta("Exito", "El registro no existe");
         }
     }
 }
