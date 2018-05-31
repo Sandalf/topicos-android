@@ -47,7 +47,7 @@ public class BaseDeDatos extends SQLiteOpenHelper {
 
     public Cursor obtenerPersona(String rfc) {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("SELECT * FROM Personas WHERE RFC = '"+rfc+"'",null);
+        Cursor res = db.rawQuery("SELECT * FROM Personas WHERE RFC = '?'",new String[]{rfc});
         return res;
     }
 
@@ -68,6 +68,12 @@ public class BaseDeDatos extends SQLiteOpenHelper {
     public Integer eliminarPersona(String rfc) {
         SQLiteDatabase db = this.getWritableDatabase();
         return db.delete("Personas","RFC = ?", new String[]{rfc});
+    }
+
+    public Cursor obtenerTodasPersonas() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("SELECT * FROM Personas",null);
+        return res;
     }
 
 }

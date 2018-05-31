@@ -11,7 +11,7 @@ import android.widget.EditText;
 public class PersonasActivity extends AppCompatActivity implements View.OnClickListener {
 
     EditText EditTextRFC,EditTextNombre,EditTextCiudad,EditTextEdad;
-    Button ButtonCrear, ButtonConsultar, ButtonActualizar, ButtonEliminar;
+    Button ButtonCrear, ButtonConsultar, ButtonActualizar, ButtonEliminar, ButtonLimpiar, ButtonMostrar;
     BaseDeDatos db;
 
     @Override
@@ -38,6 +38,12 @@ public class PersonasActivity extends AppCompatActivity implements View.OnClickL
 
         ButtonEliminar = (Button) findViewById(R.id.ButtonEliminar);
         ButtonEliminar.setOnClickListener(this);
+
+        ButtonLimpiar = (Button) findViewById(R.id.ButtonLimpiar);
+        ButtonLimpiar.setOnClickListener(this);
+
+        ButtonMostrar = (Button) findViewById(R.id.ButtonMostrar);
+        ButtonMostrar.setOnClickListener(this);
     }
 
     public void mostrarAlerta(String titulo, String mensaje) {
@@ -111,6 +117,9 @@ public class PersonasActivity extends AppCompatActivity implements View.OnClickL
             case R.id.ButtonEliminar:
                 eliminar();
                 break;
+            case R.id.ButtonLimpiar:
+                limpiar();
+                break;
         }
     }
 
@@ -132,6 +141,7 @@ public class PersonasActivity extends AppCompatActivity implements View.OnClickL
         if(EditTextRFC.getText().toString().trim().length() == 0) {
             mostrarAlerta("Error","Debe insertar un RFC");
             EditTextRFC.requestFocus();
+            return;
         }
 
         Integer filasEliminadas = db.eliminarPersona(EditTextRFC.getText().toString().trim());
@@ -140,5 +150,13 @@ public class PersonasActivity extends AppCompatActivity implements View.OnClickL
         } else {
             mostrarAlerta("Exito", "El registro no existe");
         }
+        limpiar();
+    }
+
+    public void limpiar() {
+        EditTextRFC.setText("");
+        EditTextNombre.setText("");
+        EditTextCiudad.setText("");
+        EditTextEdad.setText("");
     }
 }
