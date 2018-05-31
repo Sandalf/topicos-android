@@ -52,7 +52,17 @@ public class BaseDeDatos extends SQLiteOpenHelper {
     }
 
     public boolean actualizarPersona(String rfc, String nombre, String ciudad, int edad) {
-        return true;
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("RFC",rfc);
+        contentValues.put("Nombre",nombre);
+        contentValues.put("Ciudad",ciudad);
+        contentValues.put("Edad",edad);
+        long result = db.update("Personas",contentValues,"RFC = ?",new String[]{rfc});
+        if(result == -1)
+            return false;
+        else
+            return  true;
     }
 
 }
