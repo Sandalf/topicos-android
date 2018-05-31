@@ -11,7 +11,7 @@ import android.widget.EditText;
 public class PersonasActivity extends AppCompatActivity implements View.OnClickListener {
 
     EditText EditTextRFC,EditTextNombre,EditTextCiudad,EditTextEdad;
-    Button ButtonCrear, ButtonConsultar;
+    Button ButtonCrear, ButtonConsultar, ButtonActualizar;
     BaseDeDatos db;
 
     @Override
@@ -32,6 +32,9 @@ public class PersonasActivity extends AppCompatActivity implements View.OnClickL
 
         ButtonConsultar = (Button) findViewById(R.id.ButtonConsultar);
         ButtonConsultar.setOnClickListener(this);
+
+        ButtonActualizar = (Button) findViewById(R.id.ButtonActualizar);
+        ButtonActualizar.setOnClickListener(this);
     }
 
     public void mostrarAlerta(String titulo, String mensaje) {
@@ -43,11 +46,15 @@ public class PersonasActivity extends AppCompatActivity implements View.OnClickL
 
     public void crear() {
         if(validarCampos()) {
-            db.insertarPersona(EditTextRFC.getText().toString().trim(),
+            boolean resultado = db.insertarPersona(EditTextRFC.getText().toString().trim(),
                     EditTextNombre.getText().toString().trim(),
                     EditTextCiudad.getText().toString().trim(),
                     Integer.parseInt(EditTextEdad.getText().toString().trim()));
-            mostrarAlerta("Exito", "Persona creada");
+            if(resultado) {
+                mostrarAlerta("Exito", "Exito al insertar");
+            } else {
+                mostrarAlerta("Error", "Error al insertar");
+            }
         }
     }
 
@@ -95,13 +102,23 @@ public class PersonasActivity extends AppCompatActivity implements View.OnClickL
             case R.id.ButtonConsultar:
                 consultar();
                 break;
+            case R.id.ButtonActualizar:
+                actualizar();
+                break;
         }
     }
 
     public void actualizar() {
         if(validarCampos()) {
-            // actualizar persona
-
+            boolean resultado = db.actualizarPersona(EditTextRFC.getText().toString().trim(),
+                    EditTextNombre.getText().toString().trim(),
+                    EditTextCiudad.getText().toString().trim(),
+                    Integer.parseInt(EditTextEdad.getText().toString().trim()));
+            if(resultado) {
+                mostrarAlerta("Exito", "Exito al actualizar");
+            } else {
+                mostrarAlerta("Error", "Error al actualizar");
+            }
         }
     }
 }

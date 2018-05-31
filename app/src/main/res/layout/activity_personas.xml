@@ -81,11 +81,10 @@
         app:layout_constraintTop_toTopOf="@+id/ButtonCrear" />
 
     <Button
-        android:text="Actualizar"
+        android:id="@+id/ButtonActualizar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button3"
-        android:layout_marginStart="8dp"
+        android:text="Actualizar"
         app:layout_constraintLeft_toRightOf="@+id/ButtonConsultar"
         app:layout_constraintTop_toTopOf="@+id/ButtonConsultar" />
 
