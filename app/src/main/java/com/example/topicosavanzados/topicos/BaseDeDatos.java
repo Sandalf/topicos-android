@@ -11,6 +11,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class BaseDeDatos extends SQLiteOpenHelper {
 
+    final static int Version = 0;
     public static final String NOMBRE_DB = "Automoviles.db";
     public static final String TABLA_PERSONAS = "CREATE TABLE Personas (RFC TEXT PRIMARY KEY, Nombre TEXT, Ciudad TEXT, Edad INTEGER)";
 
