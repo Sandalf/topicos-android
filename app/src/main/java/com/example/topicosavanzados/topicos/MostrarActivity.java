@@ -43,7 +43,11 @@ public class MostrarActivity extends AppCompatActivity {
             resultado += (Rutinas.PonBlancos("CIUDAD",10));
             resultado += (Rutinas.PonBlancos("EDAD",2)+"\n");
 
+<<<<<<< Updated upstream
             // Agregar datos dfghjkl
+=======
+            // Agregar datos
+>>>>>>> Stashed changes
             while(res.moveToNext()) {
                 resultado += (Rutinas.PonBlancos(res.getString(0),13));
                 resultado += (Rutinas.PonBlancos(res.getString(1),10));
