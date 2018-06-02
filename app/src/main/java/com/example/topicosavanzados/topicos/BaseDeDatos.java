@@ -2,6 +2,7 @@ package com.example.topicosavanzados.topicos;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -43,6 +44,37 @@ public class BaseDeDatos extends SQLiteOpenHelper {
             return false;
         else
             return  true;
+    }
+
+    public Cursor obtenerPersona(String rfc) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("SELECT * FROM Personas WHERE RFC = '?'",new String[]{rfc});
+        return res;
+    }
+
+    public boolean actualizarPersona(String rfc, String nombre, String ciudad, int edad) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("RFC",rfc);
+        contentValues.put("Nombre",nombre);
+        contentValues.put("Ciudad",ciudad);
+        contentValues.put("Edad",edad);
+        long result = db.update("Personas",contentValues,"RFC = ?",new String[]{rfc});
+        if(result == -1)
+            return false;
+        else
+            return  true;
+    }
+
+    public Integer eliminarPersona(String rfc) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete("Personas","RFC = ?", new String[]{rfc});
+    }
+
+    public Cursor obtenerTodos(String tabla) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("SELECT * FROM "+tabla,null);
+        return res;
     }
 
 }
