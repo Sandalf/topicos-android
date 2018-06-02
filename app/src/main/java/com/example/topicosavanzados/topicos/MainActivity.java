@@ -8,6 +8,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
+
     BaseDeDatos db;
 
     @Override
@@ -30,6 +31,10 @@ public class MainActivity extends AppCompatActivity {
             case R.id.item_personas:
                 Intent personasIntent = new Intent(this,PersonasActivity.class);
                 this.startActivity(personasIntent);
+                return true;
+            case R.id.item_placas:
+                Intent placasIntent = new Intent(this,PlacasActivity.class );
+                this.startActivity(placasIntent);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
