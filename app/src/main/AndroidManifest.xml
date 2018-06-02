@@ -19,7 +19,8 @@
             android:name=".PersonasActivity"
             android:label="Personas"
             android:parentActivityName=".MainActivity" />
-        <activity android:name=".PlacasActivity"></activity>
+        <activity android:name=".PlacasActivity" />
+        <activity android:name=".AutosActivity"></activity>
         <activity
             android:name=".MostrarActivity"
             android:label="@string/title_activity_mostrar"

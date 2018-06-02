@@ -13,7 +13,7 @@
         tools:layout_editor_absoluteY="8dp">
 
         <EditText
-            android:id="@+id/EditTextPlaca"
+            android:id="@+id/EditTextPlaca_Placas"
             android:layout_width="291dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -24,7 +24,7 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/EditTextMarca"
+            android:id="@+id/EditTextMarca_Placas"
             android:layout_width="292dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -35,7 +35,7 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/EditTextLinea"
+            android:id="@+id/EditTextLinea_Placas"
             android:layout_width="292dp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -46,7 +46,7 @@
             android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/EditTextModelo"
+            android:id="@+id/EditTextModelo_Placas"
             android:layout_width="292dp"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -57,7 +57,7 @@
             android:inputType="number" />
 
         <Button
-            android:id="@+id/BtnCrear"
+            android:id="@+id/BtnCrear_Placas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
@@ -67,38 +67,38 @@
             android:text="CREAR" />
 
         <Button
-            android:id="@+id/BtnConsultar"
+            android:id="@+id/BtnConsultar_Placas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_alignTop="@+id/BtnCrear"
+            android:layout_alignTop="@+id/BtnCrear_Placas"
             android:layout_marginStart="120dp"
             android:text="CONSULTAR" />
 
         <Button
-            android:id="@+id/BtnActualizar"
+            android:id="@+id/BtnActualizar_Placas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
-            android:layout_alignTop="@+id/BtnCrear"
+            android:layout_alignTop="@+id/BtnCrear_Placas"
             android:layout_marginEnd="11dp"
             android:text="ACTUALIZAR" />
 
         <Button
-            android:id="@+id/BtnEliminar"
+            android:id="@+id/BtnEliminar_Placas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_alignStart="@+id/BtnCrear"
+            android:layout_alignStart="@+id/BtnCrear_Placas"
             android:layout_marginBottom="59dp"
             android:text="ELIMINAR" />
 
         <Button
-            android:id="@+id/BtnMostrar"
+            android:id="@+id/BtnMostrar_Placas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/BtnConsultar"
-            android:layout_alignTop="@+id/BtnEliminar"
+            android:layout_alignStart="@+id/BtnConsultar_Placas"
+            android:layout_alignTop="@+id/BtnEliminar_Placas"
             android:text="MOSTRAR" />
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
