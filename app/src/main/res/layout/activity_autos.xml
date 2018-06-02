@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AutosActivity">
+
+    <RelativeLayout
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <EditText
+            android:id="@+id/EditTextRFC_Autos"
+            android:layout_width="334dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="36dp"
+            android:ems="10"
+            android:hint="RFC"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/EditTextPlaca_Autos"
+            android:layout_width="329dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="116dp"
+            android:ems="10"
+            android:hint="Placa"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/EditTextPrecio_Autos"
+            android:layout_width="331dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignStart="@+id/EditTextRFC_Autos"
+            android:layout_marginTop="194dp"
+            android:ems="10"
+            android:hint="Precio"
+            android:inputType="numberDecimal" />
+
+        <Button
+            android:id="@+id/BtnRegistrar_Autos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/EditTextRFC_Autos"
+            android:layout_marginBottom="153dp"
+            android:text="Registrar" />
+
+        <Button
+            android:id="@+id/BtnEliminar_Autos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/BtnRegistrar_Autos"
+            android:layout_toEndOf="@+id/BtnSeleccionar_Autos"
+            android:text="ELIMINAR" />
+
+        <Button
+            android:id="@+id/BtnActualizar_Autos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/EditTextPrecio_Autos"
+            android:layout_alignTop="@+id/BtnRegistrar_Autos"
+            android:text="ACTUALIZAR" />
+
+        <Button
+            android:id="@+id/BtnSeleccionar_Autos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/EditTextRFC_Autos"
+            android:layout_marginBottom="56dp"
+            android:text="SELECCIONAR" />
+
+        <Button
+            android:id="@+id/BtnMostrar_Autos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/BtnSeleccionar_Autos"
+            android:layout_marginEnd="107dp"
+            android:text="MOSTRAR" />
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

@@ -1,8 +1,6 @@
 package com.example.topicosavanzados.topicos;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,16 +15,16 @@ public class PlacasActivity extends Activity implements View.OnClickListener{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_placas);
 
-        EditTextPlaca = (EditText) findViewById(R.id.EditTextPlaca);
-        EditTextMarca = (EditText) findViewById(R.id.EditTextMarca);
-        EditTextLinea = (EditText) findViewById(R.id.EditTextLinea);
-        EditTextModelo = (EditText) findViewById(R.id.EditTextModelo);
+        EditTextPlaca = (EditText) findViewById(R.id.EditTextPlaca_Placas);
+        EditTextMarca = (EditText) findViewById(R.id.EditTextMarca_Placas);
+        EditTextLinea = (EditText) findViewById(R.id.EditTextLinea_Placas);
+        EditTextModelo = (EditText) findViewById(R.id.EditTextModelo_Placas);
 
-        BtnCrear = (Button) findViewById(R.id.BtnCrear);
-        BtnConsultar = (Button) findViewById(R.id.BtnConsultar);
-        BtnActualizar = (Button) findViewById(R.id.BtnActualizar);
-        BtnEliminar = (Button) findViewById(R.id.BtnEliminar);
-        BtnMostrar = (Button) findViewById(R.id.BtnMostrar);
+        BtnCrear = (Button) findViewById(R.id.BtnCrear_Placas);
+        BtnConsultar = (Button) findViewById(R.id.BtnConsultar_Placas);
+        BtnActualizar = (Button) findViewById(R.id.BtnActualizar_Placas);
+        BtnEliminar = (Button) findViewById(R.id.BtnEliminar_Placas);
+        BtnMostrar = (Button) findViewById(R.id.BtnMostrar_Placas);
 
         BtnCrear.setOnClickListener(this);
         BtnConsultar.setOnClickListener(this);

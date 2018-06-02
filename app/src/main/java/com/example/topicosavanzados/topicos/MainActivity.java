@@ -36,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
                 Intent placasIntent = new Intent(this,PlacasActivity.class );
                 this.startActivity(placasIntent);
                 return true;
+            case R.id.item_autos:
+                Intent autosIntent = new Intent(this,AutosActivity.class);
+                this.startActivity(autosIntent);
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
