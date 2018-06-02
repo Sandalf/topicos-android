@@ -100,5 +100,13 @@
             android:layout_alignStart="@+id/BtnConsultar_Placas"
             android:layout_alignTop="@+id/BtnEliminar_Placas"
             android:text="MOSTRAR" />
+
+        <Button
+            android:id="@+id/BtnLimpiar_Placas"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/BtnActualizar_Placas"
+            android:layout_alignTop="@+id/BtnEliminar_Placas"
+            android:text="LIMPIAR" />
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

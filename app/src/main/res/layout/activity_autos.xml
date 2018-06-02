@@ -83,9 +83,16 @@
             android:id="@+id/BtnMostrar_Autos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
             android:layout_alignTop="@+id/BtnSeleccionar_Autos"
-            android:layout_marginEnd="107dp"
+            android:layout_toStartOf="@+id/BtnActualizar_Autos"
             android:text="MOSTRAR" />
+
+        <Button
+            android:id="@+id/BtnLimpiar_Autos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/EditTextRFC_Autos"
+            android:layout_alignTop="@+id/BtnSeleccionar_Autos"
+            android:text="LIMPIAR" />
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

@@ -19,12 +19,22 @@
             android:name=".PersonasActivity"
             android:label="Personas"
             android:parentActivityName=".MainActivity" />
+<<<<<<< HEAD
         <activity android:name=".PlacasActivity" />
         <activity android:name=".AutosActivity"></activity>
+<<<<<<< Updated upstream
+=======
+=======
+        <activity android:name=".PlacasActivity"></activity>
+>>>>>>> Stashed changes
         <activity
             android:name=".MostrarActivity"
             android:label="@string/title_activity_mostrar"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+<<<<<<< Updated upstream
+=======
+>>>>>>> master
+>>>>>>> Stashed changes
     </application>
 
 </manifest>
