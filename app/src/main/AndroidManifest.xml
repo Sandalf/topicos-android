@@ -20,11 +20,15 @@
             android:label="Personas"
             android:parentActivityName=".MainActivity" />
         <activity android:name=".PlacasActivity" />
-        <activity android:name=".AutosActivity"></activity>
+        <activity android:name=".AutosActivity" />
         <activity
             android:name=".MostrarActivity"
             android:label="@string/title_activity_mostrar"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ReportesActivity"
+            android:label="Reportes"
+            android:parentActivityName=".MainActivity"></activity>
     </application>
 
 </manifest>
