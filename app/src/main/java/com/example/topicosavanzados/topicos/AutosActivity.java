@@ -7,7 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 public class AutosActivity extends Activity implements View.OnClickListener{
-    Button   BtnRegistrar,BtnEliminar,BtnActualizar,BtnSeleccionar,BtnMostrar;
+    Button   BtnRegistrar,BtnEliminar,BtnActualizar,BtnSeleccionar,BtnMostrar,BtnLimpiar;
     EditText editTextRFC,editTextPlaca,editTextPrecio;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,35 +23,18 @@ public class AutosActivity extends Activity implements View.OnClickListener{
         BtnActualizar = (Button) findViewById(R.id.BtnActualizar_Autos);
         BtnSeleccionar = (Button) findViewById(R.id.BtnSeleccionar_Autos);
         BtnMostrar = (Button) findViewById(R.id.BtnMostrar_Autos);
+        BtnLimpiar = (Button) findViewById(R.id.BtnLimpiar_Autos);
 
         BtnRegistrar.setOnClickListener(this);
         BtnEliminar.setOnClickListener(this);
         BtnActualizar.setOnClickListener(this);
         BtnSeleccionar.setOnClickListener(this);
         BtnMostrar.setOnClickListener(this);
+        BtnLimpiar.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View Evt) {
-        if(Evt == BtnRegistrar){
-
-        }
-
-        if(Evt == BtnEliminar){
-
-        }
-
-        if(Evt == BtnActualizar){
-
-        }
-
-        if(Evt == BtnSeleccionar){
-
-        }
-
-        if(Evt == BtnMostrar){
-
-        }
 
     }
 }

@@ -15,6 +15,7 @@ public class BaseDeDatos extends SQLiteOpenHelper {
     final static int Version = 0;
     public static final String NOMBRE_DB = "Automoviles.db";
     public static final String TABLA_PERSONAS = "CREATE TABLE Personas (RFC TEXT PRIMARY KEY, Nombre TEXT, Ciudad TEXT, Edad INTEGER)";
+    public static final String TABLA_PLACAS = "CREATE TABLE Placas(Placa TEXT PRIMARY KEY, Marca TEXT, Linea TEXT, Modelo INTEGER)";
 
     public BaseDeDatos(Context contexto) {
         super(contexto, NOMBRE_DB, null, 1);
@@ -24,13 +25,57 @@ public class BaseDeDatos extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL(TABLA_PERSONAS);
+        db.execSQL(TABLA_PLACAS);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int versionAnterior, int versionNueva) {
         db.execSQL("DROP TABLE IF EXISTS Personas");
+        db.execSQL("DROP TABLE IF EXISTS Placas");
         onCreate(db);
     }
+    //-------------------------------------------------------------------------------------//
+    public boolean insertaPlaca(String placa, String marca, String linea , int modelo){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("Placa",placa);
+        contentValues.put("Marca",marca);
+        contentValues.put("Linea",linea);
+        contentValues.put("Modelo",modelo);
+        long result = db.insert("Placas",null,contentValues);
+        if(result == -1)
+            return false;
+        else
+            return true;
+    }
+
+
+    public Cursor obtenerPlaca(String placa) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery("SELECT * FROM Placas WHERE Placa = '?'",new String[]{placa});
+        return res;
+    }
+
+    public boolean actualizarPlaca(String placa, String marca, String linea, int modelo) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("Placa",placa);
+        contentValues.put("Marca",marca);
+        contentValues.put("Linea",linea);
+        contentValues.put("Modelo",modelo);
+        long result = db.update("Placas",contentValues,"Placa = ?",new String[]{placa});
+        if(result == -1)
+            return false;
+        else
+            return  true;
+    }
+
+    public Integer eliminarPlaca(String placa) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete("Placas","Placa = ?", new String[]{placa});
+    }
+
+    //-------------------------------------------------------------------------------------//
 
     public boolean insertarPersona(String rfc, String nombre, String ciudad, int edad) {
         SQLiteDatabase db = this.getWritableDatabase();
