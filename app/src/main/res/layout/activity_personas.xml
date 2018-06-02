@@ -75,36 +75,44 @@
         android:text="Consultar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button2"
+        android:id="@+id/ButtonConsultar"
         android:layout_marginStart="8dp"
-        app:layout_constraintLeft_toRightOf="@+id/button4"
+        app:layout_constraintLeft_toRightOf="@+id/ButtonEliminar"
         app:layout_constraintTop_toTopOf="@+id/ButtonCrear" />
 
     <Button
-        android:text="Actualizar"
+        android:id="@+id/ButtonActualizar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button3"
-        android:layout_marginStart="8dp"
-        app:layout_constraintLeft_toRightOf="@+id/button2"
-        app:layout_constraintTop_toTopOf="@+id/button2" />
+        android:text="Actualizar"
+        app:layout_constraintLeft_toRightOf="@+id/ButtonConsultar"
+        app:layout_constraintTop_toTopOf="@+id/ButtonConsultar" />
 
     <Button
         android:text="Eliminar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button4"
+        android:id="@+id/ButtonEliminar"
         app:layout_constraintLeft_toLeftOf="@+id/ButtonCrear"
         android:layout_marginTop="16dp"
         app:layout_constraintTop_toBottomOf="@+id/ButtonCrear" />
 
     <Button
-        android:text="Mostrar"
+        android:id="@+id/ButtonMostrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/button5"
-        android:layout_marginStart="8dp"
-        app:layout_constraintLeft_toRightOf="@+id/button4"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        android:text="Mostrar"
+        app:layout_constraintEnd_toEndOf="@+id/ButtonActualizar"
+        app:layout_constraintTop_toBottomOf="@+id/ButtonActualizar" />
+
+    <Button
+        android:id="@+id/ButtonLimpiar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:text="Limpiar"
+        app:layout_constraintStart_toEndOf="@+id/ButtonEliminar"
+        app:layout_constraintTop_toBottomOf="@+id/ButtonConsultar" />
 </android.support.constraint.ConstraintLayout>

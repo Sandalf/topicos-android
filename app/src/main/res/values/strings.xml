@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Topicos</string>
     <string name="title_activity_placas">PlacasActivity</string>
+    <string name="title_activity_mostrar">MostrarActivity</string>
 </resources>
