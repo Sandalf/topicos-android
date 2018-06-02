@@ -71,9 +71,9 @@ public class BaseDeDatos extends SQLiteOpenHelper {
         return db.delete("Personas","RFC = ?", new String[]{rfc});
     }
 
-    public Cursor obtenerTodasPersonas() {
+    public Cursor obtenerTodos(String tabla) {
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor res = db.rawQuery("SELECT * FROM Personas",null);
+        Cursor res = db.rawQuery("SELECT * FROM "+tabla,null);
         return res;
     }
 

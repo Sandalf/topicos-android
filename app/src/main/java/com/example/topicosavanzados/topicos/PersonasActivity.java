@@ -1,5 +1,6 @@
 package com.example.topicosavanzados.topicos;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -120,6 +121,9 @@ public class PersonasActivity extends AppCompatActivity implements View.OnClickL
             case R.id.ButtonLimpiar:
                 limpiar();
                 break;
+            case R.id.ButtonMostrar:
+                mostrarRegistros();
+                break;
         }
     }
 
@@ -158,5 +162,11 @@ public class PersonasActivity extends AppCompatActivity implements View.OnClickL
         EditTextNombre.setText("");
         EditTextCiudad.setText("");
         EditTextEdad.setText("");
+    }
+
+    public void mostrarRegistros() {
+        Intent intent = new Intent(this, MostrarActivity.class);
+        intent.putExtra("tabla", "Personas");
+        startActivity(intent);
     }
 }
