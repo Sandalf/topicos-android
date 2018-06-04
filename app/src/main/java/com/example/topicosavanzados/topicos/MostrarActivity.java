@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.TextView;
 
 public class MostrarActivity extends AppCompatActivity {
@@ -65,6 +66,20 @@ public class MostrarActivity extends AppCompatActivity {
                 resultado += (Rutinas.PonBlancos(res.getString(1),10));
                 resultado += (Rutinas.PonBlancos(res.getString(2),10));
                 resultado += (Rutinas.PonBlancos(res.getInt(3)+"",2)+"\n");
+            }
+        } else if(tabla.equals("Autos")) {
+            resultado = "RELACIÓN DE AUTOS REGISTRADOS\n\n";
+            Log.d("MOSTRARACTIVITY","RELACIÓN DE AUTOS REGISTRADOS");
+            // Agregar cabeceros
+            resultado += (Rutinas.PonBlancos("RFC",13));
+            resultado += (Rutinas.PonBlancos("Placa",10));
+            resultado += (Rutinas.PonBlancos("Precio",10)+"\n");
+
+            // Agregar datos
+            while(res.moveToNext()) {
+                resultado += (Rutinas.PonBlancos(res.getString(0),13));
+                resultado += (Rutinas.PonBlancos(res.getString(1),10));
+                resultado += (Rutinas.PonBlancos(res.getInt(2)+"",2)+"\n");
             }
         }
 
