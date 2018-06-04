@@ -42,6 +42,12 @@ public class AutosActivity extends Activity implements View.OnClickListener{
 
     public void crear() {
         if(validarCampos()) {
+            Cursor res = db.obtenerAuto(EditTextRFC.getText().toString().trim(),EditTextPlaca.getText().toString().trim());
+            if(res.getCount() > 0) {
+                mostrarAlerta("Error","El registro ya existe");
+                return;
+            }
+
             boolean resultado = db.insertarAuto(EditTextRFC.getText().toString().trim(),
                     EditTextPlaca.getText().toString().trim(),
                     Integer.parseInt(EditTextPrecio.getText().toString().trim()));
