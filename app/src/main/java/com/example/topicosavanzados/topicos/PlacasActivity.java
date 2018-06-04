@@ -14,6 +14,7 @@ public class PlacasActivity extends Activity implements View.OnClickListener{
     EditText EditTextPlaca,EditTextMarca,EditTextLinea,EditTextModelo;
     Button BtnCrear,BtnConsultar,BtnActualizar,BtnEliminar,BtnMostrar,BtnLimpiar;
     BaseDeDatos db;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,9 +41,10 @@ public class PlacasActivity extends Activity implements View.OnClickListener{
         BtnMostrar.setOnClickListener(this);
         BtnLimpiar.setOnClickListener(this);
     }
+
     public void crear() {
         if(validarCampos()) {
-            boolean resultado = db.insertarPersona(EditTextPlaca.getText().toString().trim(),
+            boolean resultado = db.insertaPlaca(EditTextPlaca.getText().toString().trim(),
                     EditTextMarca.getText().toString().trim(),
                     EditTextLinea.getText().toString().trim(),
                     Integer.parseInt(EditTextModelo.getText().toString().trim()));
@@ -76,7 +78,13 @@ public class PlacasActivity extends Activity implements View.OnClickListener{
     }
 
     public void consultar() {
-        Cursor res = db.obtenerPersona(EditTextPlaca.getText().toString());
+        if(EditTextPlaca.getText().toString().trim().length() == 0) {
+            mostrarAlerta("Error","Debe insertar un RFC");
+            EditTextPlaca.requestFocus();
+            return;
+        }
+
+        Cursor res = db.obtenerPlaca(EditTextPlaca.getText().toString().trim());
         if(res.getCount() == 0) {
             mostrarAlerta("Error","El registro no existe");
             return;
@@ -91,7 +99,7 @@ public class PlacasActivity extends Activity implements View.OnClickListener{
 
     public void actualizar() {
         if(validarCampos()) {
-            boolean resultado = db.actualizarPersona(EditTextPlaca.getText().toString().trim(),
+            boolean resultado = db.actualizarPlaca(EditTextPlaca.getText().toString().trim(),
                     EditTextMarca.getText().toString().trim(),
                     EditTextLinea.getText().toString().trim(),
                     Integer.parseInt(EditTextModelo.getText().toString().trim()));
@@ -104,13 +112,13 @@ public class PlacasActivity extends Activity implements View.OnClickListener{
     }
 
     public void eliminar() {
-        if(EditTextMarca.getText().toString().trim().length() == 0) {
-            mostrarAlerta("Error","Debe insertar un RFC");
-            EditTextMarca.requestFocus();
+        if(EditTextPlaca.getText().toString().trim().length() == 0) {
+            mostrarAlerta("Error","Debe insertar una placa");
+            EditTextPlaca.requestFocus();
             return;
         }
 
-        Integer filasEliminadas = db.eliminarPersona(EditTextMarca.getText().toString().trim());
+        Integer filasEliminadas = db.eliminarPlaca(EditTextPlaca.getText().toString().trim());
         if(filasEliminadas > 0) {
             mostrarAlerta("Exito", "Registro eliminado");
         } else {
@@ -118,12 +126,14 @@ public class PlacasActivity extends Activity implements View.OnClickListener{
         }
         limpiar();
     }
+
     public void limpiar() {
         EditTextPlaca.setText("");
         EditTextMarca.setText("");
         EditTextLinea.setText("");
         EditTextModelo.setText("");
     }
+
     @Override
     public void onClick(View Evt) {
         switch (Evt.getId()) {
@@ -147,12 +157,14 @@ public class PlacasActivity extends Activity implements View.OnClickListener{
                 break;
         }
     }
+
     public void mostrarAlerta(String titulo, String mensaje) {
         AlertDialog alerta = new AlertDialog.Builder(this).create();
         alerta.setTitle(titulo);
         alerta.setMessage(mensaje);
         alerta.show();
     }
+
     public void mostrarRegistros() {
         Intent intent = new Intent(this, MostrarActivity.class);
         intent.putExtra("tabla", "Placas");

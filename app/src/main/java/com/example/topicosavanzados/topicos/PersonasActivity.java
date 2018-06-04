@@ -90,7 +90,13 @@ public class PersonasActivity extends AppCompatActivity implements View.OnClickL
     }
 
     public void consultar() {
-        Cursor res = db.obtenerPersona(EditTextRFC.getText().toString());
+        if(EditTextRFC.getText().toString().trim().length() == 0) {
+            mostrarAlerta("Error","Debe insertar un RFC");
+            EditTextRFC.requestFocus();
+            return;
+        }
+
+        Cursor res = db.obtenerPersona(EditTextRFC.getText().toString().trim());
         if(res.getCount() == 0) {
             mostrarAlerta("Error","El registro no existe");
             return;
