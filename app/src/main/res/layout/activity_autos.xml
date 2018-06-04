@@ -52,14 +52,14 @@
             android:layout_alignParentBottom="true"
             android:layout_alignStart="@+id/EditTextRFC_Autos"
             android:layout_marginBottom="153dp"
-            android:text="Registrar" />
+            android:text="Crear" />
 
         <Button
             android:id="@+id/BtnEliminar_Autos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/BtnRegistrar_Autos"
-            android:layout_toEndOf="@+id/BtnSeleccionar_Autos"
+            android:layout_toEndOf="@+id/BtnConsultar_Autos"
             android:text="ELIMINAR" />
 
         <Button
@@ -71,19 +71,19 @@
             android:text="ACTUALIZAR" />
 
         <Button
-            android:id="@+id/BtnSeleccionar_Autos"
+            android:id="@+id/BtnConsultar_Autos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_alignStart="@+id/EditTextRFC_Autos"
             android:layout_marginBottom="56dp"
-            android:text="SELECCIONAR" />
+            android:text="Consultar" />
 
         <Button
             android:id="@+id/BtnMostrar_Autos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/BtnSeleccionar_Autos"
+            android:layout_alignTop="@+id/BtnConsultar_Autos"
             android:layout_toStartOf="@+id/BtnActualizar_Autos"
             android:text="MOSTRAR" />
 
@@ -92,7 +92,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignEnd="@+id/EditTextRFC_Autos"
-            android:layout_alignTop="@+id/BtnSeleccionar_Autos"
+            android:layout_alignTop="@+id/BtnConsultar_Autos"
             android:text="LIMPIAR" />
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
