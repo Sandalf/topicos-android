@@ -39,7 +39,7 @@ public class PersonasActivity extends AppCompatActivity implements View.OnClickL
 
         ButtonEliminar = (Button) findViewById(R.id.ButtonEliminar);
         ButtonEliminar.setOnClickListener(this);
-
+        //hola
         ButtonLimpiar = (Button) findViewById(R.id.ButtonLimpiar);
         ButtonLimpiar.setOnClickListener(this);
 
