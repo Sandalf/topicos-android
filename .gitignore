@@ -84,5 +84,3 @@ fastlane/readme.md
 app/\.DS_Store
 
 \.DS_Store
-
-*.xml
