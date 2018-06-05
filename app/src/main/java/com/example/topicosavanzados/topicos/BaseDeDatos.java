@@ -165,4 +165,17 @@ public class BaseDeDatos extends SQLiteOpenHelper {
         return db.delete("Autos", "RFC = ? AND Placa = ?", new String[]{rfc,placa});
     }
 
+    //-------------------------------REPORTES-------------------------------------------//
+
+    public Cursor reporte3() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery(
+                "SELECT P.RFC, COUNT(*), MAX(Pl.Modelo), MIN(Pl.Modelo), AVG(Pl.Modelo) " +
+                "FROM Personas P " +
+                "INNER JOIN Autos A ON A.RFC = P.RFC " +
+                "INNER JOIN Placas Pl ON Pl.Placa = A.Placa " +
+                "GROUP BY P.RFC",null);
+        return res;
+    }
+
 }
