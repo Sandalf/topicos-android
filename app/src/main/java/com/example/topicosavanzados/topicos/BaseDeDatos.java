@@ -167,6 +167,17 @@ public class BaseDeDatos extends SQLiteOpenHelper {
 
     //-------------------------------REPORTES-------------------------------------------//
 
+    public Cursor reporte2() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery(
+                "SELECT P.Ciudad, Pl.Modelo, SUM(A.Precio)" +
+                        "FROM Personas P " +
+                        "INNER JOIN Autos A ON A.RFC = P.RFC " +
+                        "INNER JOIN Placas Pl ON Pl.Placa = A.Placa " +
+                        "GROUP BY P.Ciudad, Pl.Modelo",null);
+        return res;
+    }
+
     public Cursor reporte3() {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor res = db.rawQuery(
