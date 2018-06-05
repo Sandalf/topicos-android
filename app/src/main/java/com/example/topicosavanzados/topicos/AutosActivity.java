@@ -5,11 +5,12 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class AutosActivity extends Activity implements View.OnClickListener{
+public class AutosActivity extends AppCompatActivity implements View.OnClickListener{
     Button   BtnRegistrar,BtnEliminar,BtnActualizar,BtnSeleccionar,BtnMostrar,BtnLimpiar;
     EditText EditTextRFC,EditTextPlaca,EditTextPrecio;
     BaseDeDatos db;
