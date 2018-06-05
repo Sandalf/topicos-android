@@ -5,11 +5,12 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class PlacasActivity extends Activity implements View.OnClickListener{
+public class PlacasActivity extends AppCompatActivity implements View.OnClickListener{
 
     EditText EditTextPlaca,EditTextMarca,EditTextLinea,EditTextModelo;
     Button BtnCrear,BtnConsultar,BtnActualizar,BtnEliminar,BtnMostrar,BtnLimpiar;
