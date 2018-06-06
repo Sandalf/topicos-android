@@ -166,7 +166,16 @@ public class BaseDeDatos extends SQLiteOpenHelper {
     }
 
     //-------------------------------REPORTES-------------------------------------------//
-
+    public Cursor reporte1(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery(
+                "SELECT P.RFC,P.Nombre, Pl.Marca, Pl.Modelo, Pl.Placa " +
+                        "FROM Personas P " +
+                        "INNER JOIN Autos A ON A.RFC = P.RFC "+
+                        "INNER JOIN Placas Pl ON Pl.Placa = A.Placa "+
+                        "GROUP BY P.RFC,P.Nombre, Pl.Marca, Pl.Modelo , Pl.Placa",null);
+        return res;
+    }
     public Cursor reporte2() {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor res = db.rawQuery(
@@ -186,6 +195,17 @@ public class BaseDeDatos extends SQLiteOpenHelper {
                 "INNER JOIN Autos A ON A.RFC = P.RFC " +
                 "INNER JOIN Placas Pl ON Pl.Placa = A.Placa " +
                 "GROUP BY P.RFC",null);
+        return res;
+    }
+
+    public Cursor reporte4(){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.rawQuery(
+        "SELECT P.Ciudad, COUNT(*), MIN(Pl.Modelo), MAX(Pl.Modelo), AVG(Pl.Modelo) " +
+                "FROM Personas P " +
+                "INNER JOIN Autos A ON A.RFC = P.RFC " +
+                "INNER JOIN Placas Pl ON Pl.Placa = A.Placa " +
+                "GROUP BY P.Ciudad",null);
         return res;
     }
 
