@@ -6,46 +6,13 @@
     android:layout_height="match_parent"
     tools:context="com.example.topicosavanzados.topicos.ReportesActivity">
 
-    <Button
-        android:id="@+id/ButtonReporte_4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Reporte 4"
-        app:layout_constraintStart_toEndOf="@+id/ButtonReporte_3"
-        app:layout_constraintTop_toTopOf="@+id/ButtonReporte_3" />
-
-    <Button
-        android:id="@+id/ButtonReporte_3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Reporte 3"
-        app:layout_constraintStart_toEndOf="@+id/ButtonReporte_2"
-        app:layout_constraintTop_toTopOf="@+id/ButtonReporte_2" />
-
-    <Button
-        android:id="@+id/ButtonReporte_2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Reporte 2"
-        app:layout_constraintStart_toEndOf="@+id/ButtonReporte_1"
-        app:layout_constraintTop_toTopOf="@+id/ButtonReporte_1" />
-
-    <Button
-        android:id="@+id/ButtonReporte_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Reporte 1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/TextViewReporte"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="24dp"
         android:fontFamily="monospace"
         android:text="No hay datos"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ButtonReporte_1" />
+        tools:layout_editor_absoluteY="27dp" />
 </android.support.constraint.ConstraintLayout>
