@@ -6,9 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-/**
- * Created by luis on 5/29/18.
- */
 
 public class BaseDeDatos extends SQLiteOpenHelper {
 
