@@ -55,6 +55,7 @@ public class PlacasActivity extends AppCompatActivity implements View.OnClickLis
                 mostrarAlerta("Error", "Error al insertar");
             }
         }
+        limpiar();
     }
 
     public boolean validarCampos() {
