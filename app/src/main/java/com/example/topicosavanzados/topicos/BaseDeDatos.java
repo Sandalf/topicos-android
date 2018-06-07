@@ -162,6 +162,12 @@ public class BaseDeDatos extends SQLiteOpenHelper {
         return db.delete("Autos", "RFC = ? AND Placa = ?", new String[]{rfc,placa});
     }
 
+    public Cursor obtenerAutoPlaca(String placa) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor res = db.query("Autos",new String[]{"RFC","Placa","Precio"},"Placa = ?",new String[]{placa},null,null,null,"1");
+        return res;
+    }
+
     //-------------------------------REPORTES-------------------------------------------//
     public Cursor reporte1(){
         SQLiteDatabase db = this.getWritableDatabase();
