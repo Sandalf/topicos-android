@@ -58,6 +58,7 @@ public class AutosActivity extends AppCompatActivity implements View.OnClickList
                 mostrarAlerta("Error", "Error al insertar");
             }
         }
+        limpiar();
     }
 
     public boolean validarCampos() {

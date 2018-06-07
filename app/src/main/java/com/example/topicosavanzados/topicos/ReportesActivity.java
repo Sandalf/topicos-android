@@ -55,19 +55,19 @@ public class ReportesActivity extends AppCompatActivity  {
         resultado = "RELACIÓN PERSONAS CON AUTOS\n\n";
 
         //Agregar cabeceros
-        resultado += (Rutinas.PonBlancos("RFC",13));
-        resultado += (Rutinas.PonBlancos("NOMBRE",13));
-        resultado += (Rutinas.PonBlancos("MARCA",8));
-        resultado += (Rutinas.PonBlancos("MODELO",8));
-        resultado += (Rutinas.PonBlancos("PLACA",13)+"\n");
+        resultado += (Rutinas.PonBlancos("RFC",10));
+        resultado += (Rutinas.PonBlancos("NOMBRE",10));
+        resultado += (Rutinas.PonBlancos("MARCA",7));
+        resultado += (Rutinas.PonBlancos("MODELO",7));
+        resultado += (Rutinas.PonBlancos("PLACA",10)+"\n");
 
         //Agregar datos
         while (res.moveToNext()){
-            resultado += (Rutinas.PonBlancos(res.getString(0),13));
-            resultado += (Rutinas.PonBlancos(res.getString(1),13));
-            resultado += (Rutinas.PonBlancos(res.getString(2),8));
-            resultado += (Rutinas.PonBlancos(res.getInt(3)+"",8));
-            resultado += (Rutinas.PonBlancos(res.getString(4),13)+"\n");
+            resultado += (Rutinas.PonBlancos(res.getString(0),10));
+            resultado += (Rutinas.PonBlancos(res.getString(1),10));
+            resultado += (Rutinas.PonBlancos(res.getString(2),7));
+            resultado += (Rutinas.PonBlancos(res.getInt(3)+"",7));
+            resultado += (Rutinas.PonBlancos(res.getString(4),10)+"\n");
         }
         TextViewReportes.setText(resultado);
     }
@@ -124,19 +124,19 @@ public class ReportesActivity extends AppCompatActivity  {
         resultado = "CONCENTRADO DE AUTOS POR CIUDAD\n\n";
 
         //Agregar cabeceros
-        resultado += (Rutinas.PonBlancos("CIUDAD",13));
-        resultado += (Rutinas.PonBlancos("NO.AUTOS",13));
-        resultado += (Rutinas.PonBlancos("MODELO_V",8));
-        resultado += (Rutinas.PonBlancos("MODELO_N",8));
-        resultado += (Rutinas.PonBlancos("MODELO_P",13)+"\n");
+        resultado += (Rutinas.PonBlancos("CIUDAD",10));
+        resultado += (Rutinas.PonBlancos("NO.AUTOS",9));
+        resultado += (Rutinas.PonBlancos("VIEJO",6));
+        resultado += (Rutinas.PonBlancos("NUEVO",6));
+        resultado += (Rutinas.PonBlancos("PROMEDIO",7)+"\n");
 
         //Agregar datos
         while (res.moveToNext()){
-            resultado += (Rutinas.PonBlancos(res.getString(0),13));
-            resultado += (Rutinas.PonBlancos(res.getInt(1)+"",13));
-            resultado += (Rutinas.PonBlancos(res.getInt(2)+"",8));
-            resultado += (Rutinas.PonBlancos(res.getInt(3)+"",8));
-            resultado += (Rutinas.PonBlancos(res.getInt(4)+"",13)+"\n");
+            resultado += (Rutinas.PonBlancos(res.getString(0),10));
+            resultado += (Rutinas.PonBlancos(res.getInt(1)+"",9));
+            resultado += (Rutinas.PonBlancos(res.getInt(2)+"",6));
+            resultado += (Rutinas.PonBlancos(res.getInt(3)+"",6));
+            resultado += (Rutinas.PonBlancos(res.getInt(4)+"",7)+"\n");
         }
         TextViewReportes.setText(resultado);
     }
