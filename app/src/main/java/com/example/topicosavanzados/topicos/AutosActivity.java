@@ -49,6 +49,27 @@ public class AutosActivity extends AppCompatActivity implements View.OnClickList
                 return;
             }
 
+            Cursor resRFC = db.obtenerPersona(EditTextRFC.getText().toString().trim());
+            if(resRFC.getCount() == 0) {
+                mostrarAlerta("Error","El RFC no existe");
+                EditTextRFC.requestFocus();
+                return;
+            }
+
+            Cursor resPlaca = db.obtenerPlaca(EditTextPlaca.getText().toString().trim());
+            if(resPlaca.getCount() == 0) {
+                mostrarAlerta("Error","La placa no existe");
+                EditTextPlaca.requestFocus();
+                return;
+            }
+
+            Cursor resPlacaExistente = db.obtenerAutoPlaca(EditTextPlaca.getText().toString().trim());
+            if(resPlacaExistente.getCount() >= 1) {
+                mostrarAlerta("Error","Ya existe un registro con la misma placa");
+                EditTextPlaca.requestFocus();
+                return;
+            }
+
             boolean resultado = db.insertarAuto(EditTextRFC.getText().toString().trim(),
                     EditTextPlaca.getText().toString().trim(),
                     Integer.parseInt(EditTextPrecio.getText().toString().trim()));
@@ -57,8 +78,8 @@ public class AutosActivity extends AppCompatActivity implements View.OnClickList
             } else {
                 mostrarAlerta("Error", "Error al insertar");
             }
+            limpiar();
         }
-        limpiar();
     }
 
     public boolean validarCampos() {

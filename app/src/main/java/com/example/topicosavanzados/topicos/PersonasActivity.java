@@ -65,8 +65,8 @@ public class PersonasActivity extends AppCompatActivity implements View.OnClickL
             } else {
                 mostrarAlerta("Error", "Error al insertar");
             }
+            limpiar();
         }
-        limpiar();
     }
 
     public boolean validarCampos() {
